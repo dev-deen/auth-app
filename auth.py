@@ -8,8 +8,9 @@ from sqlalchemy.orm import Session
 from database import get_db
 from fastapi.exceptions import ValidationException
 from models import UserModel
+import os
 
-SECRET_KEY = "your_secret_key_here"  
+SECRET_KEY = os.environ.get('JWT_SECRET')  
 ALGORITHM = "HS256"
 ACCESS_TOKEN_EXPIRE_MINUTES = 30
 
